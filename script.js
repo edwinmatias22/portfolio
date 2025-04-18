@@ -18,3 +18,47 @@ document.querySelectorAll('.badge').forEach(tag => {
         this.classList.toggle('bg-success');
     });
 });
+
+
+
+//function for future assignment
+
+
+// function to validate form inputs
+function validateForm() {
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    
+    if (!name || !email) {
+      alert('Please fill all required fields!');
+      return false;
+    }
+    
+    if (!email.includes('@') || !email.includes('.')) {
+      alert('Please enter a valid email!');
+      return false;
+    }
+    
+    alert('Form is valid! (This is a demo - no data is sent)');
+    return true;
+}
+//like counter
+let likeCount = 0;
+
+function addLike() {
+  likeCount++;
+  document.getElementById('like-counter').textContent = `${likeCount} likes`;
+  return likeCount;
+}
+
+//night mode toggle
+function toggleTheme() {
+    document.body.classList.toggle('dark-theme');
+    
+    const themeBtn = document.getElementById('theme-btn');
+    if (document.body.classList.contains('dark-theme')) {
+      themeBtn.textContent = ' Light Mode';
+    } else {
+      themeBtn.textContent = ' Dark Mode';
+    }
+  }
